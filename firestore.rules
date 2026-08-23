@@ -1,0 +1,27 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default safety catch-all: disallow unauthorized access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Nominations Collection: Allows public nomination creation with validated fields
+    // Strictly blocks public reading, modifying, or deleting of nomination records
+    match /nominations/{nominationId} {
+      allow create: if request.resource.data.nomineeName is string
+                    && request.resource.data.nomineeName.size() > 0
+                    && request.resource.data.email is string
+                    && request.resource.data.phone is string
+                    && request.resource.data.organization is string
+                    && request.resource.data.category is string
+                    && request.resource.data.nominationDescription is string
+                    && request.resource.data.status is string
+                    && request.resource.data.referenceId is string;
+      allow read, update, delete: if false;
+    }
+  }
+}
+

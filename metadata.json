@@ -1,0 +1,6 @@
+{
+  "name": "TuRight National Education Awards",
+  "description": "Official portal for the TuRight National Education Awards celebrating excellence, visionary leadership, and groundbreaking innovation across educators and institutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <rect width="500" height="500" rx="40" fill="#000000"/>
+  <g transform="translate(24, 210)">
+    <!-- T (Orange) -->
+    <text x="0" y="85" font-family="'Plus Jakarta Sans', 'Outfit', 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="110" font-weight="900" fill="#F37021">T</text>
+    <!-- u (White) -->
+    <text x="75" y="85" font-family="'Plus Jakarta Sans', 'Outfit', 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="110" font-weight="800" fill="#FFFFFF">u</text>
+    <!-- R (Orange) -->
+    <text x="145" y="85" font-family="'Plus Jakarta Sans', 'Outfit', 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="110" font-weight="900" fill="#F37021">R</text>
+    <!-- ight (White) -->
+    <text x="225" y="85" font-family="'Plus Jakarta Sans', 'Outfit', 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="110" font-weight="800" fill="#FFFFFF">ight</text>
+    <!-- Registered trademark symbol (R in circle) -->
+    <g transform="translate(425, 0)">
+      <circle cx="16" cy="16" r="14" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+      <text x="16" y="22" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">R</text>
+    </g>
+  </g>
+</svg>

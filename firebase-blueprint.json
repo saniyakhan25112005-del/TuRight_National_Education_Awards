@@ -1,0 +1,158 @@
+{
+  "entities": {
+    "Nomination": {
+      "title": "Nomination",
+      "description": "TuRight National Education Awards nomination dossier submission",
+      "type": "object",
+      "properties": {
+        "nomineeName": {
+          "type": "string",
+          "description": "Name of the nominee person or institution",
+          "maxLength": 300
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Primary email contact for communications",
+          "maxLength": 300
+        },
+        "nomineeEmail": {
+          "type": "string",
+          "format": "email",
+          "description": "Email address of the candidate",
+          "maxLength": 300
+        },
+        "phone": {
+          "type": "string",
+          "description": "Contact telephone number",
+          "maxLength": 50
+        },
+        "nomineePhone": {
+          "type": "string",
+          "description": "Nominee contact phone number",
+          "maxLength": 50
+        },
+        "organization": {
+          "type": "string",
+          "description": "Institution, School, or University name",
+          "maxLength": 300
+        },
+        "institution": {
+          "type": "string",
+          "description": "Organization alias for indexing and jury reviews",
+          "maxLength": 300
+        },
+        "nomineeDesignation": {
+          "type": "string",
+          "description": "Designation or title of the candidate",
+          "maxLength": 200
+        },
+        "category": {
+          "type": "string",
+          "description": "Selected award category ID or title",
+          "maxLength": 150
+        },
+        "nominationDescription": {
+          "type": "string",
+          "description": "Description of merits and pedagogical contributions",
+          "maxLength": 10000
+        },
+        "nominationTitle": {
+          "type": "string",
+          "description": "Headline or title of the nomination entry",
+          "maxLength": 500
+        },
+        "keyAchievements": {
+          "type": "string",
+          "description": "Quantifiable outcomes and milestones",
+          "maxLength": 5000
+        },
+        "yearsOfExperience": {
+          "type": "string",
+          "description": "Years of professional experience",
+          "maxLength": 100
+        },
+        "city": {
+          "type": "string",
+          "description": "City of candidate",
+          "maxLength": 150
+        },
+        "state": {
+          "type": "string",
+          "description": "State or Union Territory",
+          "maxLength": 150
+        },
+        "nominatorName": {
+          "type": "string",
+          "description": "Name of the submitter",
+          "maxLength": 300
+        },
+        "nominatorEmail": {
+          "type": "string",
+          "description": "Email of the submitter",
+          "maxLength": 300
+        },
+        "nominatorPhone": {
+          "type": "string",
+          "description": "Phone of the submitter",
+          "maxLength": 50
+        },
+        "nominatorRole": {
+          "type": "string",
+          "description": "Designation of submitter",
+          "maxLength": 200
+        },
+        "nominatorInstitution": {
+          "type": "string",
+          "description": "Institution of submitter",
+          "maxLength": 300
+        },
+        "isSelfNomination": {
+          "type": "boolean",
+          "description": "Flag if nominator is nominating self"
+        },
+        "documentName": {
+          "type": "string",
+          "description": "Uploaded dossier document file name",
+          "maxLength": 300
+        },
+        "documentSize": {
+          "type": "string",
+          "description": "Uploaded document size",
+          "maxLength": 50
+        },
+        "photoName": {
+          "type": "string",
+          "description": "Uploaded nominee photo file name",
+          "maxLength": 300
+        },
+        "status": {
+          "type": "string",
+          "description": "Application review status",
+          "enum": ["submitted", "under_review", "shortlisted", "awarded", "archived"]
+        },
+        "referenceId": {
+          "type": "string",
+          "description": "Unique nomination tracking reference code",
+          "maxLength": 100
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server creation timestamp"
+        },
+        "submittedAt": {
+          "type": "string",
+          "description": "ISO timestamp string for reporting"
+        }
+      },
+      "required": ["nomineeName", "email", "phone", "organization", "category", "nominationDescription", "status", "referenceId"]
+    }
+  },
+  "firestore": {
+    "/nominations/{nominationId}": {
+      "schema": "Nomination",
+      "description": "Public nominations collection for TuRight National Education Awards"
+    }
+  }
+}
