@@ -189,7 +189,7 @@ export const NominationSection: React.FC<NominationSectionProps> = ({
     if (!formData.category.trim()) newErrors.category = 'Please choose an award category';
 
     if (!formData.nominationTitle.trim()) newErrors.nominationTitle = 'Please provide a title for the nomination entry';
-    if (!formData.nominationDescription.trim() || formData.nominationDescription.length < 40) {
+    if (!formData.nominationDescription.trim() || formData.nominationDescription.trim().length < 40) {
       newErrors.nominationDescription = 'Please provide a detailed description (minimum 40 characters)';
     }
     if (!formData.keyAchievements.trim()) {
@@ -223,10 +223,10 @@ export const NominationSection: React.FC<NominationSectionProps> = ({
       // Prepare structured Firestore payload
       const nominationPayload = {
         nomineeName: formData.nomineeName.trim(),
-        email: (formData.nomineeEmail || formData.nominatorEmail).trim(),
-        nomineeEmail: (formData.nomineeEmail || formData.nominatorEmail).trim(),
-        phone: (formData.nomineePhone || formData.nominatorPhone).trim(),
-        nomineePhone: (formData.nomineePhone || formData.nominatorPhone).trim(),
+        email: (formData.nomineeEmail.trim() || formData.nominatorEmail.trim()),
+        nomineeEmail: (formData.nomineeEmail.trim() || formData.nominatorEmail.trim()),
+        phone: (formData.nomineePhone.trim() || formData.nominatorPhone.trim()),
+        nomineePhone: (formData.nomineePhone.trim() || formData.nominatorPhone.trim()),
         organization: formData.organization.trim(),
         institution: formData.organization.trim(),
         nomineeDesignation: formData.nomineeDesignation.trim() || 'Educator / Leader',

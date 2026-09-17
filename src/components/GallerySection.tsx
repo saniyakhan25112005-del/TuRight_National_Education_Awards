@@ -65,8 +65,8 @@ export const GallerySection: React.FC = () => {
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight font-display">
-            Glimpses of National <br className="hidden sm:inline" />
-            <span className="text-gradient-orange">Education Conclaves</span>
+            Awards
+            <span className="text-gradient-orange">Moments</span>
           </h2>
 
           <p className="text-base text-zinc-300 leading-relaxed">

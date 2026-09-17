@@ -39,7 +39,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenNomination, activeSection 
     { label: 'Categories', href: '#categories', id: 'categories' },
     { label: 'Eligibility', href: '#eligibility', id: 'eligibility' },
     { label: 'Dates', href: '#dates', id: 'dates' },
-    { label: 'Winners', href: '#winners', id: 'winners' },
     { label: 'Gallery', href: '#gallery', id: 'gallery' },
     { label: 'FAQ', href: '#faq', id: 'faq' },
     { label: 'Contact', href: '#contact', id: 'contact' },

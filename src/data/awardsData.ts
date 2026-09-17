@@ -10,9 +10,9 @@ export const AWARDS_METADATA = {
   ceremonyDate: "December 18, 2026",
   venue: "Grand Convention Center & National Education Conclave, New Delhi",
   organizer: "TuRight Educational Foundation & National Academic Council",
-  contactEmail: "awards@turight.org",
-  contactPhone: "+91 98765 43210 / +91 11 2345 6789",
-  address: "TuRight Tower, National Education Hub, Institutional Area, New Delhi - 110001",
+  contactEmail: "turighttechnologies@gmail.com",
+  contactPhone: "+91 79756 05631 / +91 98801 76095",
+  address: "No. 48, 9th Cross, KEB Colony, Quba Main, Udayagiri, Mysore, Karnataka – 570019, India.",
 };
 
 export const STATS_HIGHLIGHTS = [
@@ -330,68 +330,124 @@ export const PREVIOUS_WINNERS: Winner[] = [
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: "g-1",
-    title: "National Trophy Presentation Ceremony",
-    category: "ceremony",
-    imageUrl: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80",
-    caption: "Dignitaries presenting the prestigious TuRight National Trophy to the Educator of the Year.",
-    year: "2025"
+    title: "Life Time Achievement Award",
+    category: "winners",
+    imageUrl: "/images/awards-moments/award-moment-mapped-1.jpg",
+    caption: "DR. M. N. CHALAVADI",
+    year: "2026"
   },
   {
     id: "g-2",
-    title: "Keynote Address on the Future of AI in Education",
+    title: "Best Academic Award",
     category: "keynote",
-    imageUrl: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80",
-    caption: "Academic leaders discussing adaptive learning paradigms and educational equity.",
-    year: "2025"
+    imageUrl: "/images/awards-moments/award-moment-mapped-2.jpg",
+    caption: "KRISHNA KUMAR DWIVEDI",
+    year: "2026"
   },
   {
     id: "g-3",
-    title: "Educators and School Leaders Networking Conclave",
-    category: "ceremony",
-    imageUrl: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80",
-    caption: "Over 500 school heads and awardees collaborating during the National Education Gala.",
-    year: "2025"
+    title: "Life Time Achievement Award",
+    category: "campus",
+    imageUrl: "/images/awards-moments/award-moment-mapped-3.jpg",
+    caption: "Dr. SHANTAPPA R. KUNDAGOL",
+    year: "2026"
   },
   {
     id: "g-4",
-    title: "Interactive Classroom & STEAM Lab Innovations",
-    category: "campus",
-    imageUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
-    caption: "Award-winning experimental pedagogy in modern student laboratories.",
-    year: "2025"
+    title: "Best Senior Faculty Award",
+    category: "ceremony",
+    imageUrl: "/images/awards-moments/award-moment-mapped-4.jpg",
+    caption: "DR. S. UMA",
+    year: "2026"
   },
   {
     id: "g-5",
-    title: "Celebrating Excellence on Stage",
+    title: "Best School Principal Award",
     category: "winners",
-    imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80",
-    caption: "Winners posing with citations and gold statuettes during the gala finale.",
-    year: "2025"
+    imageUrl: "/images/awards-moments/award-moment-mapped-5.jpg",
+    caption: "DHRUVI NITIN BHATIA",
+    year: "2026"
   },
   {
     id: "g-6",
-    title: "Inspiring Future Generations in the Classroom",
-    category: "campus",
-    imageUrl: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80",
-    caption: "Teacher mentoring young students in collaborative problem-solving.",
-    year: "2025"
+    title: "Award of Excellence in Research",
+    category: "keynote",
+    imageUrl: "/images/awards-moments/award-moment-mapped-6.jpg",
+    caption: "NAMRATA PANDEY",
+    year: "2026"
   },
   {
     id: "g-7",
-    title: "Distinguished Jury Round Table",
-    category: "keynote",
-    imageUrl: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80",
-    caption: "Jury deliberations ensuring transparent, merit-driven evaluation.",
-    year: "2024"
+    title: "Best Senior Faculty Award",
+    category: "campus",
+    imageUrl: "/images/awards-moments/award-moment-mapped-7.jpg",
+    caption: "RAJEEV KUMAR DUBEY",
+    year: "2026"
   },
   {
     id: "g-8",
-    title: "Grand Stage and Award Gala Lighting",
+    title: "Best Senior Faculty Award",
     category: "ceremony",
-    imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
-    caption: "The glittering stage ready to receive national education champions.",
-    year: "2024"
-  }
+    imageUrl: "/images/awards-moments/award-moment-mapped-8.jpg",
+    caption: "PROF SESHACHALAM ANANTHASAYANAM",
+    year: "2026"
+  },
+  {
+    id: "g-9",
+    title: "Best Women Faculty Award",
+    category: "winners",
+    imageUrl: "/images/awards-moments/award-moment-mapped-9.jpg",
+    caption: "DR. SHWETA PATHAK",
+    year: "2026"
+  },
+  {
+    id: "g-10",
+    title: "Best Research Scholar Award",
+    category: "keynote",
+    imageUrl: "/images/awards-moments/award-moment-mapped-10.jpg",
+    caption: "GAURAV GUPTA",
+    year: "2026"
+  },
+  {
+    id: "g-11",
+    title: "Best Women Faculty Award",
+    category: "campus",
+    imageUrl: "/images/awards-moments/award-moment-mapped-11.jpg",
+    caption: "MACHADO SNEHA JOHN",
+    year: "2026"
+  },
+  {
+    id: "g-12",
+    title: "Best Researcher Award",
+    category: "ceremony",
+    imageUrl: "/images/awards-moments/award-moment-mapped-12.jpg",
+    caption: "HRIDYESH PANDEY",
+    year: "2026"
+  },
+  {
+    id: "g-13",
+    title: "Best Innovation in Life Sciences Award",
+    category: "winners",
+    imageUrl: "/images/awards-moments/award-moment-mapped-13.jpg",
+    caption: "D. KASTHURI SANTIRA KUMARI",
+    year: "2026"
+  },
+  {
+    id: "g-14",
+    title: "Best Senior Faculty Award",
+    category: "keynote",
+    imageUrl: "/images/awards-moments/award-moment-mapped-14.jpg",
+    caption: "DR. MEENAL SUKHLECHA",
+    year: "2026"
+  },
+  {
+    id: "g-15",
+    title: "Best Administrator Award",
+    category: "campus",
+    imageUrl: "/images/awards-moments/award-moment-mapped-15.jpg",
+    caption: "BHUPENDRA KULDEEP",
+    year: "2026"
+  },
 ];
 
 export const JURY_MEMBERS: JuryMember[] = [

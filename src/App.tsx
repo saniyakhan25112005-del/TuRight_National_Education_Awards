@@ -11,9 +11,8 @@ import { CategoriesSection } from './components/CategoriesSection';
 import { EligibilitySection } from './components/EligibilitySection';
 import { TimelineSection } from './components/TimelineSection';
 import { NominationSection } from './components/NominationSection';
-import { WinnersSection } from './components/WinnersSection';
+import { YouTubeSection } from './components/YouTubeSection';
 import { GallerySection } from './components/GallerySection';
-import { TestimonialsAndJury } from './components/TestimonialsAndJury';
 import { FaqSection } from './components/FaqSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -62,7 +61,7 @@ export default function App() {
   // Scroll spy to highlight active section in Navbar
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'categories', 'eligibility', 'dates', 'nomination', 'winners', 'gallery', 'faq', 'contact'];
+      const sections = ['home', 'about', 'categories', 'eligibility', 'dates', 'nomination', 'gallery', 'faq', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -129,14 +128,11 @@ export default function App() {
           onClearPreselectedCategory={() => setPreselectedCategory('')}
         />
 
-        {/* Previous Winners / Hall of Fame */}
-        <WinnersSection />
+        {/* YouTube Section */}
+        <YouTubeSection />
 
         {/* Photo & Video Gallery */}
         <GallerySection />
-
-        {/* Testimonials, Jury & Academic Partners */}
-        <TestimonialsAndJury />
 
         {/* Frequently Asked Questions */}
         <FaqSection />
