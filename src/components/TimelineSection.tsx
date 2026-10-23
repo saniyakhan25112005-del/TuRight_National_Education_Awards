@@ -59,7 +59,7 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ onOpenNominati
           </p>
 
           <div className="text-xs text-zinc-400 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-lg inline-block">
-            📅 <span className="text-zinc-200 font-semibold">Schedule Status:</span> Current Phase: Active Nomination Intake until November 15, 2026.
+            📅 <span className="text-zinc-200 font-semibold">Schedule Status:</span> Current Phase: Active 8th Edition Nomination Intake until October 31, 2026 (11:59 PM IST).
           </div>
         </div>
 

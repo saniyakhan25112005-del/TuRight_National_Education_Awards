@@ -82,36 +82,21 @@ export interface FaqItem {
 }
 
 export interface NominationFormData {
-  // Nominator info
-  nominatorName: string;
-  nominatorEmail: string;
-  nominatorPhone: string;
-  nominatorRole: string;
-  nominatorInstitution: string;
-  isSelfNomination: boolean;
-
-  // Nominee info
-  nomineeName: string;
-  nomineeEmail: string;
-  nomineePhone: string;
-  nomineeDesignation: string;
+  fullName: string;
+  email: string;
+  mobileNumber: string;
+  designation: string;
   organization: string;
   city: string;
-  state: string;
-  category: string;
-
-  // Description & merits
-  nominationTitle: string;
-  nominationDescription: string;
-  keyAchievements: string;
   yearsOfExperience: string;
-  supportingInformation: string;
-  websiteUrl?: string;
+  additionalInformation: string;
+  cvFileName: string;
+  cvFileSize: string;
+  cvFileType: string;
+  cvDataUrl?: string;
 
-  // Uploads
-  documentName?: string;
-  documentSize?: string;
-  photoName?: string;
-  photoPreview?: string;
-  agreedToTerms: boolean;
+  // Legacy/compatibility fields for Firestore rules and modal display
+  nomineeName?: string;
+  category?: string;
+  referenceId?: string;
 }

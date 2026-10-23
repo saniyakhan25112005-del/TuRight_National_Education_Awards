@@ -20,7 +20,7 @@ import { Award, ArrowUp, Sparkles, MessageCircle } from 'lucide-react';
 
 export default function App() {
   const [preselectedCategory, setPreselectedCategory] = useState<string>('');
-  const [activeSection, setActiveSection] = useState<string>('home');
+  const [activeSection, setActiveSection] = useState<string>('nomination');
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   const handleOpenNomination = (categoryId?: string) => {
@@ -33,12 +33,14 @@ export default function App() {
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
+      const offsetPosition = Math.max(0, elementPosition - offset);
 
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
       });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -61,7 +63,7 @@ export default function App() {
   // Scroll spy to highlight active section in Navbar
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'categories', 'eligibility', 'dates', 'nomination', 'gallery', 'faq', 'contact'];
+      const sections = ['nomination', 'home', 'gallery', 'about', 'categories', 'eligibility', 'dates', 'faq', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -96,11 +98,23 @@ export default function App() {
       />
 
       <main>
+        {/* Official Nomination Form Portal - Loaded immediately as the default landing view */}
+        <NominationSection
+          preselectedCategory={preselectedCategory}
+          onClearPreselectedCategory={() => setPreselectedCategory('')}
+        />
+
         {/* Hero Section */}
         <HeroSection
           onOpenNomination={handleOpenNomination}
           onExploreAwards={handleExploreAwards}
         />
+
+        {/* Photo & Video Gallery - Positioned immediately after Home */}
+        <GallerySection />
+
+        {/* YouTube Section */}
+        <YouTubeSection />
 
         {/* About the Awards */}
         <AboutSection
@@ -121,18 +135,6 @@ export default function App() {
         <TimelineSection
           onOpenNomination={handleOpenNomination}
         />
-
-        {/* Official Nomination Form Portal */}
-        <NominationSection
-          preselectedCategory={preselectedCategory}
-          onClearPreselectedCategory={() => setPreselectedCategory('')}
-        />
-
-        {/* YouTube Section */}
-        <YouTubeSection />
-
-        {/* Photo & Video Gallery */}
-        <GallerySection />
 
         {/* Frequently Asked Questions */}
         <FaqSection />

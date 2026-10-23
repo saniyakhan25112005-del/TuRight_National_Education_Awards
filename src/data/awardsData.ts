@@ -1,12 +1,12 @@
 import { AwardCategory, ImportantDate, Winner, GalleryItem, Testimonial, JuryMember, FaqItem } from '../types';
 
 export const AWARDS_METADATA = {
-  edition: "2026 Edition",
+  edition: "8th Edition – 2026 National Education Awards",
   title: "TuRight National Education Awards",
   shortTitle: "TuRight Education Awards",
   tagline: "Honoring Visionaries, Transforming Learning, Empowering the Nation",
   description: "The premier national recognition program celebrating educators, institutions, and innovators shaping the future of global and national education.",
-  nominationDeadline: "2026-11-15T23:59:59",
+  nominationDeadline: "2026-10-31T23:59:59+05:30",
   ceremonyDate: "December 18, 2026",
   venue: "Grand Convention Center & National Education Conclave, New Delhi",
   organizer: "TuRight Educational Foundation & National Academic Council",
@@ -208,10 +208,10 @@ export const IMPORTANT_DATES: ImportantDate[] = [
     id: "phase-2",
     phase: "Phase 02",
     title: "Nomination Submission Deadline",
-    date: "November 15, 2026",
-    isoDate: "2026-11-15",
+    date: "October 31, 2026",
+    isoDate: "2026-10-31",
     status: "active",
-    description: "Final deadline for submitting dossiers, endorsement letters, and supporting case studies.",
+    description: "Final deadline for submitting nominations, CVs, and supporting documentation (closes 11:59 PM IST).",
     iconName: "Clock"
   },
   {

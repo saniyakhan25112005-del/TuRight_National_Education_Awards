@@ -35,17 +35,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenNomination, activeSection 
 
   const navLinks = [
     { label: 'Home', href: '#home', id: 'home' },
+    { label: 'Gallery', href: '#gallery', id: 'gallery' },
     { label: 'About', href: '#about', id: 'about' },
     { label: 'Categories', href: '#categories', id: 'categories' },
     { label: 'Eligibility', href: '#eligibility', id: 'eligibility' },
     { label: 'Dates', href: '#dates', id: 'dates' },
-    { label: 'Gallery', href: '#gallery', id: 'gallery' },
     { label: 'FAQ', href: '#faq', id: 'faq' },
     { label: 'Contact', href: '#contact', id: 'contact' },
   ];
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
+    if (href === '#nomination' || href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       const navOffset = 80;
@@ -72,12 +76,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenNomination, activeSection 
           <div className="flex items-center gap-4">
             <span className="inline-flex items-center gap-1.5 text-[#F37021] font-semibold">
               <Sparkles className="w-3.5 h-3.5 animate-pulse" />
-              Nominations Open for 2026 National Edition
+              8th Edition – 2026 National Education Awards
             </span>
             <span className="text-zinc-600">•</span>
-            <span className="flex items-center gap-1 text-zinc-400">
+            <span className="flex items-center gap-1 text-amber-300 font-medium">
               <Calendar className="w-3 h-3 text-[#F37021]" />
-              Submission Deadline: Nov 15, 2026
+              Nomination Deadline: October 31, 2026 (11:59 PM IST)
             </span>
           </div>
           <div className="flex items-center gap-4 text-xs">
@@ -98,10 +102,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenNomination, activeSection 
         <div className="flex items-center justify-between gap-4">
           {/* Logo with official branding */}
           <a
-            href="#home"
+            href="#nomination"
             onClick={(e) => {
               e.preventDefault();
-              handleNavClick('#home');
+              handleNavClick('#nomination');
             }}
             className="flex items-center gap-3 group focus:outline-none"
             aria-label="TuRight National Education Awards Homepage"
@@ -137,7 +141,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenNomination, activeSection 
           <div className="hidden sm:flex items-center gap-3">
             <button
               onClick={() => onOpenNomination()}
-              className="relative group overflow-hidden rounded-xl bg-gradient-to-r from-[#F37021] to-[#FF8C38] px-5 py-2 text-xs md:text-sm font-bold text-white shadow-lg shadow-[#F37021]/25 hover:shadow-[#F37021]/40 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 cursor-pointer"
+              className={`relative group overflow-hidden rounded-xl bg-gradient-to-r from-[#F37021] to-[#FF8C38] px-5 py-2 text-xs md:text-sm font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 cursor-pointer ${
+                activeSection === 'nomination'
+                  ? 'ring-2 ring-white/50 shadow-[#F37021]/50'
+                  : 'shadow-[#F37021]/25 hover:shadow-[#F37021]/40'
+              }`}
             >
               <FileCheck2 className="w-4 h-4" />
               <span>Nominate Now</span>

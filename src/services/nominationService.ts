@@ -10,8 +10,7 @@ export interface NominationSubmissionResult {
 }
 
 /**
- * Submits nomination either to custom Java Spring Boot REST API (if configured)
- * or directly to Firebase Firestore client SDK.
+ * Submits nomination to Firebase Cloud Firestore.
  */
 export async function submitNominationDossier(
   formData: NominationFormData,
@@ -19,7 +18,7 @@ export async function submitNominationDossier(
 ): Promise<NominationSubmissionResult> {
   const referenceId = `TR-2026-EDU-${Math.floor(1000 + Math.random() * 9000)}`;
 
-  // If a Java backend URL is configured, use the REST API bridge
+  // If a custom backend URL is configured, use the REST API bridge
   if (backendUrl) {
     const response = await fetch(`${backendUrl}/api/nominations`, {
       method: 'POST',
@@ -28,14 +27,13 @@ export async function submitNominationDossier(
       },
       body: JSON.stringify({
         ...formData,
-        email: formData.nomineeEmail || formData.nominatorEmail,
-        phone: formData.nomineePhone || formData.nominatorPhone,
+        referenceId,
       }),
     });
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
-      throw new Error(errorData.message || `Java API Error: HTTP ${response.status}`);
+      throw new Error(errorData.message || `Backend API Error: HTTP ${response.status}`);
     }
 
     const data = await response.json();
@@ -47,37 +45,27 @@ export async function submitNominationDossier(
     };
   }
 
-  // Default: Direct Cloud Firestore submission
+  // Default: Direct Cloud Firestore submission matching firestore.rules
   const nominationPayload = {
-    nomineeName: formData.nomineeName.trim(),
-    email: (formData.nomineeEmail || formData.nominatorEmail).trim(),
-    nomineeEmail: (formData.nomineeEmail || formData.nominatorEmail).trim(),
-    phone: (formData.nomineePhone || formData.nominatorPhone).trim(),
-    nomineePhone: (formData.nomineePhone || formData.nominatorPhone).trim(),
+    fullName: formData.fullName.trim(),
+    email: formData.email.trim(),
+    mobileNumber: formData.mobileNumber.trim(),
+    designation: formData.designation.trim(),
     organization: formData.organization.trim(),
-    institution: formData.organization.trim(),
-    nomineeDesignation: formData.nomineeDesignation.trim() || 'Educator / Leader',
-    category: formData.category,
-    nominationDescription: formData.nominationDescription.trim(),
-    nominationTitle: formData.nominationTitle.trim(),
-    keyAchievements: formData.keyAchievements.trim(),
-    yearsOfExperience: formData.yearsOfExperience.trim() || 'Not specified',
-    supportingInformation: formData.supportingInformation.trim() || '',
-    websiteUrl: formData.websiteUrl.trim() || '',
     city: formData.city.trim(),
-    state: formData.state,
+    yearsOfExperience: formData.yearsOfExperience.trim(),
+    additionalInformation: formData.additionalInformation.trim(),
     
-    nominatorName: formData.nominatorName.trim(),
-    nominatorEmail: formData.nominatorEmail.trim(),
-    nominatorPhone: formData.nominatorPhone.trim(),
-    nominatorRole: formData.nominatorRole.trim() || 'Nominator',
-    nominatorInstitution: formData.nominatorInstitution.trim() || formData.organization.trim(),
-    isSelfNomination: Boolean(formData.isSelfNomination),
-    
-    documentName: formData.documentName || null,
-    documentSize: formData.documentSize || null,
-    photoName: formData.photoName || null,
-    
+    cvFileName: formData.cvFileName,
+    cvFileSize: formData.cvFileSize,
+    cvFileType: formData.cvFileType,
+    cvDataUrl: formData.cvDataUrl,
+
+    // Required by firestore.rules
+    nomineeName: formData.fullName.trim(),
+    phone: formData.mobileNumber.trim(),
+    category: "8th Edition – 2026 National Education Awards",
+    nominationDescription: formData.additionalInformation.trim() || `Official nomination for ${formData.fullName.trim()} (${formData.designation.trim()} at ${formData.organization.trim()}) in the 8th Edition TuRight National Education Awards 2026.`,
     status: 'submitted',
     referenceId: referenceId,
     createdAt: serverTimestamp(),

@@ -36,13 +36,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenNomination }) => {
           <div className="space-y-2 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F37021]/20 text-[#F37021] text-xs font-bold uppercase">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Entries Closing Nov 15, 2026</span>
+              <span>8th Edition • Nominations Close October 31, 2026</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-black text-white font-display">
               Ready to Recognize Excellence in Education?
             </h3>
             <p className="text-xs sm:text-sm text-zinc-300">
-              Nominate an exceptional teacher, revolutionary school, or visionary chancellor today.
+              Submit your nomination for the 8th Edition TuRight National Education Awards 2026 before October 31, 2026.
             </p>
           </div>
 
@@ -135,13 +135,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenNomination }) => {
             </h4>
             <ul className="space-y-2 text-xs">
               <li><a href="#home" className="hover:text-[#F37021] transition-colors">Home Portal</a></li>
+              <li><a href="#gallery" className="hover:text-[#F37021] transition-colors">Photo & Video Gallery</a></li>
               <li><a href="#about" className="hover:text-[#F37021] transition-colors">About the Awards</a></li>
               <li><a href="#categories" className="hover:text-[#F37021] transition-colors">Award Categories</a></li>
               <li><a href="#eligibility" className="hover:text-[#F37021] transition-colors">Eligibility Guide</a></li>
               <li><a href="#dates" className="hover:text-[#F37021] transition-colors">Important Dates</a></li>
-              <li><a href="#winners" className="hover:text-[#F37021] transition-colors">Hall of Fame / Winners</a></li>
-              <li><a href="#gallery" className="hover:text-[#F37021] transition-colors">Photo Gallery</a></li>
+              <li><a href="#nomination" className="hover:text-[#F37021] transition-colors">Nomination Form</a></li>
               <li><a href="#faq" className="hover:text-[#F37021] transition-colors">Frequently Asked Questions</a></li>
+              <li><a href="#contact" className="hover:text-[#F37021] transition-colors">Contact Secretariat</a></li>
             </ul>
           </div>
 

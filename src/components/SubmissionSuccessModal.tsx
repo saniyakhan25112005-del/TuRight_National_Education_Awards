@@ -67,15 +67,16 @@ export const SubmissionSuccessModal: React.FC<SubmissionSuccessModalProps> = ({
           </div>
 
           {/* Heading */}
+          {/* Heading */}
           <div className="space-y-1.5">
             <span className="text-xs uppercase font-bold tracking-widest text-[#F37021]">
-              Submission Confirmed
+              Submission Confirmed • 8th Edition
             </span>
             <h3 className="text-2xl sm:text-3xl font-black text-white font-display">
-              Nomination Successfully Lodged!
+              Nomination Successfully Submitted!
             </h3>
-            <p className="text-sm text-zinc-300 max-w-md mx-auto">
-              Your dossier for <strong className="text-white">{data.nomineeName}</strong> has been registered in the official 2026 jury repository.
+            <p className="text-sm text-zinc-300 max-w-lg mx-auto font-medium">
+              Your nomination has been submitted successfully. Thank you for participating in the TuRight National Education Awards 2026.
             </p>
           </div>
 
@@ -99,24 +100,57 @@ export const SubmissionSuccessModal: React.FC<SubmissionSuccessModalProps> = ({
               </button>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               <div>
-                <span className="text-zinc-400 block">Category:</span>
-                <span className="font-semibold text-zinc-200 capitalize">{data.category || 'General Entry'}</span>
+                <span className="text-zinc-400 block">Candidate / Full Name:</span>
+                <span className="font-semibold text-zinc-200">{data.fullName || data.nomineeName}</span>
               </div>
               <div>
-                <span className="text-zinc-400 block">Institution:</span>
+                <span className="text-zinc-400 block">Designation:</span>
+                <span className="font-semibold text-zinc-200">{data.designation}</span>
+              </div>
+              <div>
+                <span className="text-zinc-400 block">Institute / Organization:</span>
                 <span className="font-semibold text-zinc-200">{data.organization}</span>
               </div>
               <div>
-                <span className="text-zinc-400 block">Nominator:</span>
-                <span className="font-semibold text-zinc-200">{data.nominatorName}</span>
+                <span className="text-zinc-400 block">City:</span>
+                <span className="font-semibold text-zinc-200">{data.city}</span>
               </div>
               <div>
-                <span className="text-zinc-400 block">Date of Lodgement:</span>
-                <span className="font-semibold text-zinc-200">{new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+                <span className="text-zinc-400 block">Experience:</span>
+                <span className="font-semibold text-zinc-200">{data.yearsOfExperience} Years</span>
+              </div>
+              <div>
+                <span className="text-zinc-400 block">Attached CV:</span>
+                <span className="font-semibold text-emerald-400 truncate block max-w-[200px]">
+                  {data.cvFileName} ({data.cvFileSize})
+                </span>
+              </div>
+              <div>
+                <span className="text-zinc-400 block">Email Address:</span>
+                <span className="font-semibold text-zinc-200">{data.email}</span>
+              </div>
+              <div>
+                <span className="text-zinc-400 block">Date of Submission:</span>
+                <span className="font-semibold text-zinc-200">
+                  {new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                </span>
               </div>
             </div>
+
+            {data.cvDataUrl && (
+              <div className="pt-2 border-t border-white/10">
+                <a
+                  href={data.cvDataUrl}
+                  download={data.cvFileName}
+                  className="inline-flex items-center gap-2 text-xs font-semibold text-[#F37021] hover:text-amber-300 transition-colors"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span>Download / Review Submitted CV</span>
+                </a>
+              </div>
+            )}
           </div>
 
           {/* Next Steps Info */}
@@ -126,9 +160,9 @@ export const SubmissionSuccessModal: React.FC<SubmissionSuccessModalProps> = ({
               What Happens Next?
             </div>
             <ul className="text-zinc-300 space-y-1.5 list-disc list-inside">
-              <li>A verification email has been dispatched to <strong>{data.nominatorEmail}</strong>.</li>
-              <li>The technical secretariat will verify all attached documents within 5 working days.</li>
-              <li>The Grand Jury will commence blinded evaluations after nominations close on Nov 15, 2026.</li>
+              <li>Confirmation details have been recorded for <strong>{data.email}</strong>.</li>
+              <li>The academic secretariat will review your submitted CV and profile.</li>
+              <li>Jury evaluation commences after nominations close on October 31, 2026.</li>
             </ul>
           </div>
 

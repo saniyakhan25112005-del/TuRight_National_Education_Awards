@@ -71,22 +71,20 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenNomination }) 
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F37021]/10 border border-[#F37021]/30 text-[#F37021] text-xs font-bold uppercase tracking-widest">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>About The National Initiative</span>
+            <span>8th Edition • 2026</span>
           </div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight font-display">
-            Celebrating the Torchbearers of <br className="hidden sm:inline" />
-            <span className="text-gradient-orange">Educational Excellence</span>
+            About TuRight National Education Awards
           </h2>
 
           <p className="text-base sm:text-lg text-zinc-300 leading-relaxed">
-            The TuRight National Education Awards is an annual national recognition platform instituted to honor transformative work in classrooms, universities, research laboratories, and educational governance.
+            The TuRight National Education Awards celebrate outstanding educators, schools, colleges, researchers, and educational leaders who make a positive difference in education. These awards recognize their achievements, dedication, innovation, and contribution to improving education across India.
           </p>
 
-          {/* Placeholder note indicator for administration clarity */}
           <div className="inline-flex items-center gap-2 text-xs bg-zinc-900/80 text-zinc-400 border border-white/10 px-3 py-1 rounded-md">
             <span className="w-1.5 h-1.5 rounded-full bg-[#F37021]" />
-            <span>Official initiative organized under the TuRight National Educational Foundation.</span>
+            <span>Official 8th Edition organized under the TuRight National Educational Foundation.</span>
           </div>
         </div>
 
