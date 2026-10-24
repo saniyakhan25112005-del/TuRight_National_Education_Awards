@@ -7,20 +7,19 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
-import { CategoriesSection } from './components/CategoriesSection';
+import { CompleteAwardCategoriesTable } from './components/CompleteAwardCategoriesTable';
 import { EligibilitySection } from './components/EligibilitySection';
-import { TimelineSection } from './components/TimelineSection';
 import { NominationSection } from './components/NominationSection';
 import { YouTubeSection } from './components/YouTubeSection';
 import { GallerySection } from './components/GallerySection';
 import { FaqSection } from './components/FaqSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
-import { Award, ArrowUp, Sparkles, MessageCircle } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 
 export default function App() {
   const [preselectedCategory, setPreselectedCategory] = useState<string>('');
-  const [activeSection, setActiveSection] = useState<string>('nomination');
+  const [activeSection, setActiveSection] = useState<string>('home');
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   const handleOpenNomination = (categoryId?: string) => {
@@ -63,7 +62,7 @@ export default function App() {
   // Scroll spy to highlight active section in Navbar
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['nomination', 'home', 'gallery', 'about', 'categories', 'eligibility', 'dates', 'faq', 'contact'];
+      const sections = ['home', 'nomination', 'gallery', 'about', 'categories', 'eligibility', 'faq', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -98,19 +97,19 @@ export default function App() {
       />
 
       <main>
-        {/* Official Nomination Form Portal - Loaded immediately as the default landing view */}
-        <NominationSection
-          preselectedCategory={preselectedCategory}
-          onClearPreselectedCategory={() => setPreselectedCategory('')}
-        />
-
-        {/* Hero Section */}
+        {/* Hero Section - Homepage opens first */}
         <HeroSection
           onOpenNomination={handleOpenNomination}
           onExploreAwards={handleExploreAwards}
         />
 
-        {/* Photo & Video Gallery - Positioned immediately after Home */}
+        {/* Official Nomination Form Portal - Displayed immediately below Homepage Hero */}
+        <NominationSection
+          preselectedCategory={preselectedCategory}
+          onClearPreselectedCategory={() => setPreselectedCategory('')}
+        />
+
+        {/* Photo & Video Gallery */}
         <GallerySection />
 
         {/* YouTube Section */}
@@ -121,8 +120,8 @@ export default function App() {
           onOpenNomination={handleOpenNomination}
         />
 
-        {/* Award Categories */}
-        <CategoriesSection
+        {/* TuRight National Education Awards – Complete Award Categories List (All 220) */}
+        <CompleteAwardCategoriesTable
           onOpenNomination={handleOpenNomination}
         />
 
@@ -131,41 +130,26 @@ export default function App() {
           onOpenNomination={handleOpenNomination}
         />
 
-        {/* Important Dates Timeline */}
-        <TimelineSection
-          onOpenNomination={handleOpenNomination}
-        />
-
         {/* Frequently Asked Questions */}
         <FaqSection />
 
-        {/* Contact Us & Map */}
+        {/* Contact Us */}
         <ContactSection />
       </main>
 
       {/* Footer */}
       <Footer onOpenNomination={handleOpenNomination} />
 
-      {/* Floating Action Quick Button on Bottom Right */}
-      <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
-        {showScrollTop && (
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="p-3 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-white/15 shadow-xl transition-all hover:scale-110 cursor-pointer"
-            aria-label="Scroll to top of page"
-          >
-            <ArrowUp className="w-4 h-4" />
-          </button>
-        )}
-
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
         <button
-          onClick={() => handleOpenNomination()}
-          className="group flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-[#F37021] via-[#FA6400] to-[#E65100] text-white font-bold text-xs sm:text-sm shadow-2xl shadow-[#F37021]/40 hover:shadow-[#F37021]/60 hover:scale-105 active:scale-95 transition-all cursor-pointer border border-white/20"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-zinc-900/90 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-white/15 shadow-xl transition-all hover:scale-110 cursor-pointer backdrop-blur-sm"
+          aria-label="Scroll to top of page"
         >
-          <Award className="w-4 h-4 animate-bounce" />
-          <span>Nominate 2026</span>
+          <ArrowUp className="w-4 h-4" />
         </button>
-      </div>
+      )}
 
     </div>
   );

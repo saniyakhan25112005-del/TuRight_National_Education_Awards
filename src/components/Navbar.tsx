@@ -35,18 +35,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenNomination, activeSection 
 
   const navLinks = [
     { label: 'Home', href: '#home', id: 'home' },
+    { label: 'Nomination', href: '#nomination', id: 'nomination' },
     { label: 'Gallery', href: '#gallery', id: 'gallery' },
     { label: 'About', href: '#about', id: 'about' },
     { label: 'Categories', href: '#categories', id: 'categories' },
     { label: 'Eligibility', href: '#eligibility', id: 'eligibility' },
-    { label: 'Dates', href: '#dates', id: 'dates' },
     { label: 'FAQ', href: '#faq', id: 'faq' },
     { label: 'Contact', href: '#contact', id: 'contact' },
   ];
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
-    if (href === '#nomination' || href === '#') {
+    if (href === '#home' || href === '#') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
@@ -85,9 +85,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenNomination, activeSection 
             </span>
           </div>
           <div className="flex items-center gap-4 text-xs">
-            <a href="tel:+919876543210" className="hover:text-white flex items-center gap-1 transition-colors">
+            <a href="tel:+919880176095" className="hover:text-white flex items-center gap-1 transition-colors">
               <PhoneCall className="w-3 h-3 text-[#F37021]" />
-              Helpline: +91 98765 43210
+              Helpline: +91 98801 76095
             </a>
             <span className="text-zinc-600">|</span>
             <a href="#faq" className="hover:text-white flex items-center gap-1 transition-colors">
@@ -102,10 +102,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenNomination, activeSection 
         <div className="flex items-center justify-between gap-4">
           {/* Logo with official branding */}
           <a
-            href="#nomination"
+            href="#home"
             onClick={(e) => {
               e.preventDefault();
-              handleNavClick('#nomination');
+              handleNavClick('#home');
             }}
             className="flex items-center gap-3 group focus:outline-none"
             aria-label="TuRight National Education Awards Homepage"
@@ -204,7 +204,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenNomination, activeSection 
               Submit Official Nomination
             </button>
             <div className="text-center text-xs text-zinc-400 mt-2">
-              Helpline: +91 98765 43210 • awards@turight.org
+              Helpline: <a href="tel:+919880176095" className="text-zinc-200 hover:text-white underline">+91 98801 76095</a> • <a href="mailto:turighttechnologies@gmail.com" className="text-zinc-200 hover:text-white underline">turighttechnologies@gmail.com</a>
             </div>
           </div>
         </div>

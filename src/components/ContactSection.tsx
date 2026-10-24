@@ -72,100 +72,88 @@ export const ContactSection: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          {/* Left Column: Contact Details & Map Placeholder */}
+          {/* Left Column: Contact Details */}
           <div className="lg:col-span-5 space-y-6">
             
             {/* Main Info Card */}
-            <div className="glass-panel rounded-2xl p-6 sm:p-8 border border-white/10 space-y-6">
-              <div className="flex items-center gap-3">
+            <div className="glass-panel rounded-2xl p-6 sm:p-8 border border-white/10 space-y-6 bg-[#10121A]/90 shadow-xl">
+              <div className="flex items-center gap-3 border-b border-white/10 pb-4">
                 <TuRightLogo size="sm" />
-                <span className="text-xs uppercase font-bold text-zinc-400 tracking-wider">
-                  Awards Headquarters
-                </span>
+                <div>
+                  <span className="text-xs uppercase font-extrabold text-[#F37021] tracking-wider block">
+                    Awards Secretariat
+                  </span>
+                  <span className="text-sm font-bold text-white font-display">
+                    TuRight National Education Awards
+                  </span>
+                </div>
               </div>
 
-              <div className="space-y-4 text-sm">
+              <div className="space-y-5 text-sm">
                 <div className="flex items-start gap-3.5 text-zinc-300">
-                  <div className="w-9 h-9 rounded-xl bg-[#F37021]/15 text-[#F37021] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <MapPin className="w-4 h-4" />
+                  <div className="w-10 h-10 rounded-xl bg-[#F37021]/15 text-[#F37021] flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <MapPin className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="font-bold text-white block">Official Address:</span>
-                    <span className="text-xs text-zinc-400">{AWARDS_METADATA.address}</span>
+                    <span className="text-xs sm:text-sm text-zinc-300 font-medium">Mysuru, Karnataka, India</span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5 text-zinc-300">
-                  <div className="w-9 h-9 rounded-xl bg-[#F37021]/15 text-[#F37021] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Mail className="w-4 h-4" />
+                  <div className="w-10 h-10 rounded-xl bg-[#F37021]/15 text-[#F37021] flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="font-bold text-white block">Email Inquiries:</span>
-                    <a href={`mailto:${AWARDS_METADATA.contactEmail}`} className="text-xs text-[#F37021] hover:underline font-medium">
-                      {AWARDS_METADATA.contactEmail}
+                    <span className="font-bold text-white block">Telephone Helpline:</span>
+                    <a
+                      href="tel:+919880176095"
+                      className="text-xs sm:text-sm text-amber-300 hover:text-white font-bold transition-colors inline-block"
+                    >
+                      +91 98801 76095
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5 text-zinc-300">
-                  <div className="w-9 h-9 rounded-xl bg-[#F37021]/15 text-[#F37021] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Phone className="w-4 h-4" />
+                  <div className="w-10 h-10 rounded-xl bg-[#F37021]/15 text-[#F37021] flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="font-bold text-white block">Telephone Helpline:</span>
-                    <span className="text-xs text-zinc-400">{AWARDS_METADATA.contactPhone}</span>
+                    <span className="font-bold text-white block">Email Inquiries:</span>
+                    <a 
+                      href="mailto:turighttechnologies@gmail.com" 
+                      className="text-xs sm:text-sm text-[#F37021] hover:underline font-medium break-all"
+                    >
+                      turighttechnologies@gmail.com
+                    </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5 text-zinc-300">
-                  <div className="w-9 h-9 rounded-xl bg-[#F37021]/15 text-[#F37021] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Clock className="w-4 h-4" />
+                  <div className="w-10 h-10 rounded-xl bg-[#F37021]/15 text-[#F37021] flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="font-bold text-white block">Secretariat Office Hours:</span>
-                    <span className="text-xs text-zinc-400">Monday - Saturday: 9:00 AM – 6:00 PM IST</span>
+                    <span className="font-bold text-white block">Office Hours:</span>
+                    <span className="text-xs sm:text-sm text-zinc-300 font-medium">11:00 AM to 8:30 PM IST</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Interactive Map Visual Placeholder */}
-            <div className="relative rounded-2xl overflow-hidden bg-zinc-900 border border-white/10 aspect-[16/9] group shadow-xl">
-              {/* Map background illustration */}
-              <div 
-                className="w-full h-full bg-[#181A24] flex items-center justify-center relative"
-                style={{
-                  backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.06) 1px, transparent 0)`,
-                  backgroundSize: '24px 24px'
-                }}
-              >
-                {/* Visual Location Marker */}
-                <div className="relative flex flex-col items-center">
-                  <div className="relative">
-                    <div className="w-12 h-12 rounded-full bg-[#F37021]/20 animate-ping absolute inset-0" />
-                    <div className="w-12 h-12 rounded-full bg-[#F37021] text-white flex items-center justify-center shadow-2xl relative z-10 border-2 border-white">
-                      <Building className="w-6 h-6" />
-                    </div>
-                  </div>
-                  <div className="mt-2 bg-black/90 px-3 py-1 rounded-full border border-white/15 text-[11px] font-bold text-white shadow-lg">
-                    TuRight National Secretariat
-                  </div>
-                  <span className="text-[10px] text-zinc-400">Institutional Area, New Delhi</span>
-                </div>
+            {/* Quick Coordination & Guidance Card */}
+            <div className="p-6 rounded-2xl bg-zinc-900/60 border border-white/10 space-y-3">
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#F37021]">
+                <Sparkles className="w-4 h-4 text-amber-400" />
+                <span>Nomination Support & Queries</span>
               </div>
-
-              {/* Map controls overlay */}
-              <div className="absolute bottom-3 left-3 right-3 bg-black/80 backdrop-blur-md p-2.5 rounded-xl text-xs flex items-center justify-between border border-white/10">
-                <span className="text-zinc-300 font-medium">Google Maps Location</span>
-                <a
-                  href="https://maps.google.com/?q=New+Delhi+Institutional+Area"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs font-bold text-[#F37021] hover:underline flex items-center gap-1"
-                >
-                  <span>Open Directions</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
+              <p className="text-xs text-zinc-300 leading-relaxed">
+                For queries regarding nomination guidelines, category selection, institutional entries, or technical submission help, our team is accessible by phone and email during office hours.
+              </p>
+              <div className="pt-2 text-[11px] text-zinc-400 border-t border-white/5 flex items-center justify-between">
+                <span>Response Time:</span>
+                <span className="font-semibold text-emerald-400">Within 24 business hours</span>
               </div>
             </div>
 
@@ -240,7 +228,7 @@ export const ContactSection: React.FC = () => {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 98801 76095"
                         className="w-full px-3.5 py-2.5 bg-zinc-900 border border-white/10 rounded-xl text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#F37021] transition-all"
                       />
                     </div>

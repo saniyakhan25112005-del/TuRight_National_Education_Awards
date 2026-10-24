@@ -156,9 +156,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenNomination }) 
               </button>
               <a
                 href="#categories"
-                className="px-6 py-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-300 font-semibold text-sm border border-white/10 transition-colors"
+                className="px-6 py-3 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/35 text-amber-300 hover:text-white font-semibold text-sm transition-colors flex items-center gap-2"
               >
-                Browse 25+ Award Categories
+                <span>View All 220 Categories</span>
               </a>
             </div>
           </div>

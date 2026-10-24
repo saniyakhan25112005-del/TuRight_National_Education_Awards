@@ -7,16 +7,17 @@ export const AWARDS_METADATA = {
   tagline: "Honoring Visionaries, Transforming Learning, Empowering the Nation",
   description: "The premier national recognition program celebrating educators, institutions, and innovators shaping the future of global and national education.",
   nominationDeadline: "2026-10-31T23:59:59+05:30",
-  ceremonyDate: "December 18, 2026",
+  ceremonyDate: "October 30, 2026",
+  ceremonyTime: "11:00 AM to 8:30 PM IST",
   venue: "Grand Convention Center & National Education Conclave, New Delhi",
   organizer: "TuRight Educational Foundation & National Academic Council",
   contactEmail: "turighttechnologies@gmail.com",
-  contactPhone: "+91 79756 05631 / +91 98801 76095",
-  address: "No. 48, 9th Cross, KEB Colony, Quba Main, Udayagiri, Mysore, Karnataka – 570019, India.",
+  contactPhone: "+91 98801 76095",
+  address: "Mysuru, Karnataka, India",
 };
 
 export const STATS_HIGHLIGHTS = [
-  { value: "25+", label: "Award Categories", sub: "Covering K-12 to Higher Ed" },
+  { value: "220", label: "Award Categories", sub: "Covering 13 Academic Domains" },
   { value: "1,200+", label: "Institutions Nominated", sub: "Across 28 States & UTs" },
   { value: "45+", label: "Distinguished Jury", sub: "Eminent academicians & leaders" },
   { value: "100%", label: "Merit-Based Process", sub: "Rigorous 3-stage evaluation" },
@@ -329,6 +330,50 @@ export const PREVIOUS_WINNERS: Winner[] = [
 
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
+    id: "winner-cert-1",
+    title: "Best Faculty Award",
+    recipient: "Dr. Senthil Kumar J.",
+    institution: "Associate Professor, Department of Mechanical Engineering, Government College of Engineering, Salem, Tamil Nadu",
+    category: "winners",
+    imageUrl: "/assets/aistudio/WhatsApp_Image_2026-10-23_at_5.10.26_PM__1__9838b729.jpeg",
+    caption: "Dr. Senthil Kumar J. – Certificate of Recognition & Prestigious Trophy",
+    badge: "Official Certificate & Trophy",
+    year: "2026"
+  },
+  {
+    id: "winner-cert-2",
+    title: "Best Professor Award",
+    recipient: "Dr. Diwakar Ramanuj Tripathi",
+    institution: "Professor & HOD, Computer Engineering, Sandip Institute of Technology & Research Centre, Nashik, Maharashtra",
+    category: "winners",
+    imageUrl: "/assets/aistudio/WhatsApp_Image_2026-10-23_at_5.09.27_PM__1__e70343b5.jpeg",
+    caption: "Dr. Diwakar Ramanuj Tripathi – Golden Trophies, Medals & Certificate",
+    badge: "Official Certificate & Trophy",
+    year: "2026"
+  },
+  {
+    id: "winner-cert-3",
+    title: "Best Faculty Award",
+    recipient: "Nithin Rajput",
+    institution: "Assistant Professor, Dept. of Computer Applications, KLS Gogte Institute of Technology, Belagavi, Karnataka",
+    category: "winners",
+    imageUrl: "/assets/aistudio/WhatsApp_Image_2026-10-23_at_5.05.50_PM__3__c8cb7846.jpeg",
+    caption: "Nithin Rajput – Official TuRight National Award Certificate",
+    badge: "Official Certificate",
+    year: "2026"
+  },
+  {
+    id: "winner-cert-4",
+    title: "Best Assistant Professor Award",
+    recipient: "Dr. Sowmya V",
+    institution: "Assistant Professor (Sr. Gr.), Dept. of ECE, Amrita School of Engineering, Bengaluru, Karnataka",
+    category: "winners",
+    imageUrl: "/assets/aistudio/WhatsApp_Image_2026-10-23_at_5.05.50_PM__2__357dfb35.jpeg",
+    caption: "Dr. Sowmya V – Official TuRight National Award Certificate",
+    badge: "Official Certificate",
+    year: "2026"
+  },
+  {
     id: "g-1",
     title: "Life Time Achievement Award",
     category: "winners",
@@ -552,7 +597,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: "faq-6",
     question: "When and where will the winners be announced?",
-    answer: "Finalists will be notified via email by December 05, 2026. The final national award recipients will be honored live on stage during the grand gala ceremony on December 18, 2026, held at the Grand Convention Center, New Delhi.",
+    answer: "Finalists will be notified via email by December 05, 2026. The final national award recipients will be honored during the National Awards Ceremony on October 30, 2026 (11:00 AM to 8:30 PM IST).",
     category: "dates"
   },
   {
@@ -564,7 +609,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: "faq-8",
     question: "How can I get assistance or contact the awards coordination team?",
-    answer: "You can reach the official awards secretariat via email at awards@turight.org, or through our helpline at +91 98765 43210 (Mon-Sat, 9:00 AM – 6:00 PM IST). You can also use the contact form located at the bottom of this website.",
+    answer: "You can reach the official awards secretariat via email at turighttechnologies@gmail.com, or through our helpline at +91 98801 76095 (Office Hours: 11:00 AM to 8:30 PM IST). You can also use the contact form located at the bottom of this website.",
     category: "general"
   }
 ];

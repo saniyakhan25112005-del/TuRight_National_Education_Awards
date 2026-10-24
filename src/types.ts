@@ -52,6 +52,9 @@ export interface GalleryItem {
   imageUrl: string;
   caption: string;
   year: string;
+  recipient?: string;
+  institution?: string;
+  badge?: string;
 }
 
 export interface Testimonial {

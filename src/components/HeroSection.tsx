@@ -89,38 +89,28 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenNomination, onEx
           {/* Main Hero Column */}
           <div className="lg:col-span-7 text-center lg:text-left space-y-6">
             
-            {/* 8th Edition Pill Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-zinc-900 via-[#1A1815] to-zinc-900 border border-[#F37021]/40 shadow-lg text-xs sm:text-sm font-semibold text-zinc-200">
-              <span className="flex h-2.5 w-2.5 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F37021] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#F37021]"></span>
-              </span>
-              <span className="text-[#F37021] font-black tracking-wider uppercase text-[11px] sm:text-xs">
-                8th Edition – 2026
-              </span>
-              <span className="text-zinc-600">•</span>
-              <span className="text-amber-200 font-medium">National Education Awards</span>
-            </div>
-
-            {/* Main Headline */}
-            <div className="space-y-3">
-              <div className="flex items-center justify-center lg:justify-start gap-3 mb-2">
+            {/* Main Headline Block */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-center lg:justify-start gap-3">
                 <TuRightLogo size="md" />
-                <span className="text-xs uppercase tracking-[0.22em] text-[#F37021] font-extrabold bg-[#F37021]/15 px-3 py-1 rounded-lg border border-[#F37021]/30">
-                  8th Edition – 2026
-                </span>
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-[1.08] font-display">
-                TuRight National <br className="hidden sm:inline" />
-                <span className="text-gradient-orange">Education Awards</span>
-              </h1>
-              <p className="text-lg sm:text-2xl text-amber-100/90 font-medium tracking-tight font-display pt-1">
-                8th Edition – 2026 National Education Awards
+
+              <div className="space-y-3 sm:space-y-4">
+                <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight font-display leading-[1.14]">
+                  TuRight National Education Awards
+                </h1>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#F37021] via-amber-400 to-[#F37021] font-display tracking-wide">
+                  8th Edition | 2026
+                </div>
+              </div>
+
+              <p className="text-base sm:text-xl text-zinc-300 font-medium max-w-xl mx-auto lg:mx-0 leading-relaxed pt-1">
+                Recognizing Excellence in Education Across India
               </p>
             </div>
 
             {/* Description */}
-            <p className="text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               India's premier recognition platform celebrating outstanding educators, pioneering academic institutions, researchers, and visionary leaders shaping the future of education across India.
             </p>
 
@@ -180,10 +170,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenNomination, onEx
               
               {/* Card Content */}
               <div className="space-y-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#F37021]">
-                    <Sparkles className="w-4 h-4 text-amber-400" />
-                    <span>8th Edition Timeline</span>
+                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <div className="space-y-0.5">
+                    <span className="text-xs uppercase font-extrabold tracking-wider text-[#F37021] flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                      8th Edition – 2026
+                    </span>
+                    <h3 className="text-lg sm:text-xl font-bold text-white font-display">
+                      Nomination Portal Closes In
+                    </h3>
                   </div>
                   {isNominationsClosed ? (
                     <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-red-500/20 text-red-400 border border-red-500/40">
@@ -191,19 +186,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenNomination, onEx
                     </span>
                   ) : (
                     <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
-                      Active Submissions
+                      Active
                     </span>
                   )}
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold text-white font-display">
-                    Nomination Portal Closes In:
-                  </h3>
-                  <p className="text-xs text-amber-300 font-medium mt-1 flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5 text-[#F37021]" />
-                    <span>Deadline: October 31, 2026, at 11:59 PM IST</span>
-                  </p>
                 </div>
 
                 {/* Countdown Display or "Nominations Closed" state */}
@@ -246,35 +231,45 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenNomination, onEx
                   </div>
                 )}
 
-                {/* Key Event Milestones */}
-                <div className="space-y-2.5 pt-2 border-t border-white/10">
-                  <div className="flex items-center justify-between text-xs py-1.5 border-b border-white/5">
-                    <span className="text-zinc-400 flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5 text-[#F37021]" />
-                      Nomination Deadline:
-                    </span>
-                    <span className="font-semibold text-amber-300">October 31, 2026</span>
+                {/* Nomination Deadline Display */}
+                <div className="p-3.5 rounded-xl bg-black/40 border border-white/10 space-y-1 text-left">
+                  <div className="text-[11px] uppercase font-bold text-zinc-400 tracking-wider flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5 text-[#F37021]" />
+                    <span>Nomination Deadline</span>
                   </div>
-                  <div className="flex items-center justify-between text-xs py-1.5 border-b border-white/5">
-                    <span className="text-zinc-400 flex items-center gap-1.5">
-                      <Users className="w-3.5 h-3.5 text-[#F37021]" />
-                      Jury Audit Phase:
-                    </span>
-                    <span className="font-semibold text-zinc-200">Nov 05 - 20, 2026</span>
+                  <div className="text-sm sm:text-base font-bold text-amber-300 font-display">
+                    October 31, 2026
                   </div>
-                  <div className="flex items-center justify-between text-xs py-1.5 border-b border-white/5">
-                    <span className="text-zinc-400 flex items-center gap-1.5">
-                      <Users className="w-3.5 h-3.5 text-[#F37021]" />
-                      Finalist Announcement:
-                    </span>
-                    <span className="font-semibold text-zinc-200">Dec 05, 2026</span>
+                  <div className="text-xs sm:text-sm text-zinc-300 font-medium">
+                    Time: <span className="font-bold text-amber-300 font-display">11:00 AM to 8:30 PM IST</span>
                   </div>
-                  <div className="flex items-center justify-between text-xs py-1.5">
-                    <span className="text-zinc-400 flex items-center gap-1.5">
-                      <Trophy className="w-3.5 h-3.5 text-amber-400" />
-                      Grand National Gala:
+                </div>
+
+                {/* Separate National Awards Ceremony Announcement */}
+                <div className="p-4 rounded-xl bg-gradient-to-br from-amber-500/15 via-[#0A182E] to-orange-500/10 border border-[#F37021]/40 text-left space-y-2.5 shadow-lg relative overflow-hidden group">
+                  <div className="text-xs uppercase font-extrabold text-[#F37021] tracking-wider flex items-center justify-between">
+                    <span className="flex items-center gap-1.5">
+                      <Trophy className="w-4 h-4 text-amber-400" />
+                      <span>National Awards Ceremony</span>
                     </span>
-                    <span className="font-bold text-amber-300">Dec 18, 2026 (New Delhi)</span>
+                    <span className="text-[10px] font-bold text-amber-300 bg-amber-500/20 px-2 py-0.5 rounded-full border border-amber-500/30">
+                      Gala Event
+                    </span>
+                  </div>
+                  <div className="space-y-1.5 text-xs sm:text-sm">
+                    <div className="flex items-center justify-between text-zinc-200 py-0.5">
+                      <span className="font-semibold text-white">Date:</span>
+                      <span className="font-medium text-zinc-200">October 30, 2026</span>
+                    </div>
+                    <div className="flex items-center justify-between gap-2 bg-black/50 px-2.5 py-1.5 rounded-lg border border-amber-400/30 shadow-inner">
+                      <span className="font-semibold text-white flex items-center gap-1.5 shrink-0">
+                        <Clock className="w-3.5 h-3.5 text-[#F37021]" />
+                        <span>Time:</span>
+                      </span>
+                      <span className="font-bold text-amber-300 tracking-wide font-display text-xs sm:text-sm whitespace-nowrap text-right">
+                        11:00 AM to 8:30 PM IST
+                      </span>
+                    </div>
                   </div>
                 </div>
 

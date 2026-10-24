@@ -163,7 +163,7 @@ export const NominationSection: React.FC<NominationSectionProps> = ({
     if (!formData.mobileNumber.trim()) {
       newErrors.mobileNumber = 'Mobile Number is required';
     } else if (!indianPhoneRegex.test(rawPhone)) {
-      newErrors.mobileNumber = 'Please enter a valid 10-digit Indian mobile number (e.g., 9876543210 or +91 98765 43210)';
+      newErrors.mobileNumber = 'Please enter a valid 10-digit Indian mobile number (e.g., 9880176095 or +91 98801 76095)';
     }
 
     // 4. Designation
@@ -288,7 +288,7 @@ export const NominationSection: React.FC<NominationSectionProps> = ({
   };
 
   return (
-    <section id="nomination" className="pt-32 sm:pt-36 pb-20 relative bg-[#0B0C10] overflow-hidden">
+    <section id="nomination" className="py-24 relative bg-[#0B0C10] overflow-hidden border-t border-white/5">
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 right-10 w-[550px] h-[550px] bg-[#F37021]/12 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute top-1/2 left-10 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[160px] pointer-events-none" />
@@ -309,11 +309,16 @@ export const NominationSection: React.FC<NominationSectionProps> = ({
             <span>8th Edition • 2026 National Education Awards</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight font-display">
-            TuRight National Education Awards – 8th Edition, 2026
-          </h1>
+          <div className="space-y-2">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight font-display leading-[1.15]">
+              TuRight National Education Awards
+            </h2>
+            <div className="text-xl sm:text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#F37021] via-amber-400 to-[#F37021] font-display tracking-wide">
+              8th Edition | 2026
+            </div>
+          </div>
 
-          <p className="text-base sm:text-lg text-zinc-300 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-zinc-300 leading-relaxed max-w-2xl mx-auto pt-1">
             Submit your nomination for the TuRight National Education Awards 2026.
           </p>
 
@@ -407,7 +412,7 @@ export const NominationSection: React.FC<NominationSectionProps> = ({
                     name="mobileNumber"
                     value={formData.mobileNumber}
                     onChange={handleInputChange}
-                    placeholder="e.g. 9876543210 or +91 98765 43210"
+                    placeholder="e.g. 9880176095 or +91 98801 76095"
                     className={`w-full pl-10 pr-3.5 py-3 bg-zinc-900/90 border rounded-xl text-sm text-white placeholder-zinc-500 focus:outline-none transition-all ${
                       errors.mobileNumber ? 'border-red-500 focus:border-red-500' : 'border-white/10 focus:border-[#F37021]'
                     }`}
@@ -635,10 +640,20 @@ export const NominationSection: React.FC<NominationSectionProps> = ({
             Want to explore award details, categories, past winners & eligibility?
           </p>
           <a
-            href="#home"
-            className="inline-flex items-center gap-2 mt-2 px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white transition-all border border-white/10 shadow-lg"
+            href="#gallery"
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById('gallery');
+              if (element) {
+                const navOffset = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+              }
+            }}
+            className="inline-flex items-center gap-2 mt-2 px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white transition-all border border-white/10 shadow-lg cursor-pointer"
           >
-            <span>Explore Awards Overview & Gallery</span>
+            <span>Explore Awards Gallery, Categories & Guidelines Below</span>
             <ChevronDown className="w-4 h-4 text-[#F37021] animate-bounce" />
           </a>
         </div>
